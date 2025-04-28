@@ -5,7 +5,7 @@ void PortA_Init()
     SetBit(SYSCTL_RCGCGPIO_R,0);
 		while(GetBit(SYSCTL_PRGPIO_R,0)==0);
 		GPIO_PORTA_LOCK_R = GPIO_LOCK_KEY;
-    GPIO_PORTA_CR_R |= 0xFF;
+          GPIO_PORTA_CR_R |= 0xFF;
 		GPIO_PORTA_AFSEL_R &= ~ 0xFF;  
 		GPIO_PORTA_PCTL_R  =0x0;
 		GPIO_PORTA_DEN_R |= 0xFF;
@@ -15,8 +15,8 @@ void PortB_Init()
 {
     SetBit(SYSCTL_RCGCGPIO_R,1);
     while(GetBit(SYSCTL_PRGPIO_R,1)==0);
-    GPIO_PORTB_LOCK_R =GPIO_LOCK_KEY;
-    GPIO_PORTB_CR_R |= 0xFF;
+          GPIO_PORTB_LOCK_R =GPIO_LOCK_KEY;
+          GPIO_PORTB_CR_R |= 0xFF;
 		GPIO_PORTB_AFSEL_R &= ~ 0xFF;  
 		GPIO_PORTB_PCTL_R = 0x0 ;   
 		GPIO_PORTB_DEN_R |= 0xFF;
@@ -26,7 +26,6 @@ void PortC_Init()
 {
     SetBit(SYSCTL_RCGCGPIO_R,2);
     while(GetBit(SYSCTL_PRGPIO_R,2)==0);
-    GPIO_PORTC_CR_R |= 0xFF;
 		GPIO_PORTC_AFSEL_R &= ~ 0xFF;  
 		GPIO_PORTC_PCTL_R =0x0; 
 		GPIO_PORTC_DEN_R |= 0xFF;
@@ -39,22 +38,21 @@ void PortD_Init()
 		SetBit(SYSCTL_RCGCGPIO_R,3);
 		while(!GetBit(SYSCTL_PRGPIO_R,3));
 		GPIO_PORTD_LOCK_R = GPIO_LOCK_KEY;
-		GPIO_PORTD_CR_R|=0x80;
-		GPIO_PORTD_AFSEL_R|=~0xFF;
-		GPIO_PORTD_PCTL_R=0x0;
-		GPIO_PORTD_DEN_R|=0xFF;
-		GPIO_PORTD_AMSEL_R|=~0xFF;
+		GPIO_PORTD_CR_R |=0x80;
+		GPIO_PORTD_AFSEL_R &=~0xFF;
+		GPIO_PORTD_PCTL_R =0x0;
+		GPIO_PORTD_DEN_R |=0xFF;
+		GPIO_PORTD_AMSEL_R &=~0xFF;
 }
 
 void PortE_Init()
 {
 		SetBit(SYSCTL_RCGCGPIO_R,4);			
 		while(!GetBit(SYSCTL_PRGPIO_R,4));
-
-		GPIO_PORTE_AFSEL_R|=~0xFF;
-		GPIO_PORTE_PCTL_R=0x0;
-		GPIO_PORTE_DEN_R|=0x3F;
-		GPIO_PORTE_AMSEL_R|=~0x3F;
+		GPIO_PORTE_AFSEL_R &=~0xFF;
+		GPIO_PORTE_PCTL_R =0x0;
+		GPIO_PORTE_DEN_R |=0x3F;
+		GPIO_PORTE_AMSEL_R &=~0x3F;
 }
 
 void PortF_Init()
@@ -63,11 +61,10 @@ void PortF_Init()
 		while(!GetBit(SYSCTL_PRGPIO_R,5));
 		GPIO_PORTF_LOCK_R = GPIO_LOCK_KEY;
 		GPIO_PORTF_CR_R|=0x01;
-		GPIO_PORTF_AFSEL_R|=~0xFF;
-		GPIO_PORTF_PCTL_R=0x0;
-		GPIO_PORTF_DEN_R|=0x1F;
-		GPIO_PORTF_AMSEL_R|=~0x1F;
-		GPIO_PORTF_DATA_R|=~0x0E;
+		GPIO_PORTF_AFSEL_R &=~0xFF;
+		GPIO_PORTF_PCTL_R =0x0;
+		GPIO_PORTF_DEN_R |=0x1F;
+		GPIO_PORTF_AMSEL_R &=~0x1F;
 }
 
 void GPIO_voidSetPinDirection(u8 port,u8 pin, u8 direction)
