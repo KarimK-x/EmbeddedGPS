@@ -63,3 +63,25 @@ void LCD_voidIntToStr(u32 num,u8 *str)
 	}
 	str[i] = '\0';
 }
+
+void LCD_voidSendData(u8 data)
+{
+	GPIO_voidSetPinValue(LCD_CONTROL_PORT,LCD_RS_PIN,PIN_HIGH);
+	GPIO_voidSetPinValue(LCD_CONTROL_PORT,LCD_RW_PIN,PIN_LOW);
+	GPIO_voidSetPortValue(LCD_DATA_PORT,data);
+	LCD_VoidEnable();
+	
+}
+
+void LCD_voidSendCommand(u8 comm)
+{
+	GPIO_voidSetPinValue(LCD_CONTROL_PORT,LCD_RS_PIN,PIN_LOW);
+	GPIO_voidSetPinValue(LCD_CONTROL_PORT,LCD_RW_PIN,PIN_LOW);
+	GPIO_voidSetPortValue(LCD_DATA_PORT,comm);
+	LCD_voidEnable();	
+}
+
+void LCD_voidClearScreen()
+{
+	LCD_voidSendCommand(LCD_CLEAR);
+}
