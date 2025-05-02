@@ -1,6 +1,5 @@
 #include "GPIO.h"
 #include "systick.h"
-
 #ifndef LCD_H
 #define LCD_H
 

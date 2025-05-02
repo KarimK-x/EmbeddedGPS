@@ -6,7 +6,7 @@ void LCD_voidEnable()
 	Systick_voidDelayms(2);
 	GPIO_voidSetPinValue(LCD_CONTROL_PORT,LCD_E_PIN,PIN_LOW);	 
 }
-void LCD_VoidIntialization()
+void LCD_voidInit()
 {
     GPIO_voidSetPinDirection(LCD_CONTROL_PORT,LCD_RS_PIN,PIN_OUTPUT);
 	GPIO_voidSetPinDirection(LCD_CONTROL_PORT,LCD_RW_PIN,PIN_OUTPUT);
