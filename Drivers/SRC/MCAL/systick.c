@@ -6,7 +6,7 @@ void SysTick_Handler(void) {
 
 void Systick_voidInit(){
     NVIC_ST_CTRL_R = 0;
-    NVIC_ST_RELOAD_R = 0;
+    NVIC_ST_RELOAD_R = RELOAD_MAX_VALUE;
     NVIC_ST_CURRENT_R = 0;
     NVIC_ST_CTRL_R |= NVIC_ST_CTRL_ENABLE;
     NVIC_ST_CTRL_R |= NVIC_ST_CTRL_CLK_SRC;
@@ -17,7 +17,7 @@ void Systick_voidInit(){
 
 void Systick_voidInitISR(){
     NVIC_ST_CTRL_R = 0;
-    NVIC_ST_RELOAD_R = 0;
+    NVIC_ST_RELOAD_R = RELOAD_MAX_VALUE;
     NVIC_ST_CURRENT_R = 0;
     NVIC_ST_CTRL_R |= NVIC_ST_CTRL_ENABLE;
     NVIC_ST_CTRL_R |= NVIC_ST_CTRL_CLK_SRC;
