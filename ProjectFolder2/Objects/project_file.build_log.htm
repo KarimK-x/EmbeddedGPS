@@ -1,0 +1,86 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.41.0.0
+Copyright (C) 2024 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Karim Khaled, Ain Shams University - Faculty of Engineering, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.41.0.0
+Toolchain Path:  C:\Users\Dell\AppData\Local\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.22
+Assembler:       Armasm.exe V6.22
+Linker/Locator:  ArmLink.exe V6.22
+Library Manager: ArmAr.exe V6.22
+Hex Converter:   FromElf.exe V6.22
+CPU DLL:         SARMCM3.DLL V5.41.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      lmidk-agdi.dll V???
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+E:\KeilUvisionProjects\Project folder 2\Project folder 2\project_file.uvprojx
+Project File Date:  05/10/2025
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.22', folder: 'C:\Users\Dell\AppData\Local\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target_1'
+main.c(74): warning: passing 'char[9]' to parameter of type 'const u8 *' (aka 'const unsigned char *') converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+   74 |     LCD_voidSendString("KexLotfy");
+      |                        ^~~~~~~~~~
+.\LCD.h(39): note: passing argument to parameter 'str' here
+   39 | void LCD_voidSendString(const u8 *str);                                         // to send a string (sequence of characters) to be displayed on the LCD
+      |                                   ^
+1 warning generated.
+compiling main.c...
+compiling UART.c...
+compiling GPIO.c...
+compiling GPS.c...
+compiling systick.c...
+LCD.c(32): warning: multiple unsequenced modifications to 'address' [-Wunsequenced]
+   32 |                 address=SetBit(address,LCD_D7_PIN);
+      |                        ~^
+.\BitMath.h(12): note: expanded from macro 'SetBit'
+   12 | #define SetBit(reg,pin) (reg|=(1<<pin))
+      |                             ^
+1 warning generated.
+compiling LCD.c...
+assembling startup_TM4C123.s...
+compiling system_TM4C123.c...
+linking...
+Program Size: Code=3010 RO-data=646 RW-data=0 ZI-data=608  
+".\Objects\project_file.axf" - 0 Error(s), 2 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS.6.1.0.pack
+                ARM::CMSIS@6.1.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 6.1.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.TM4C_DFP.1.1.0.pack
+                Keil::TM4C_DFP@1.1.0
+                Texas Instruments Tiva C Series Device Support and Examples
+   * Component: Startup Version: 1.0.1
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  C:/Users/Dell/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include
+  C:/Users/Dell/AppData/Local/Arm/Packs/Keil/TM4C_DFP/1.1.0/Device/Include/TM4C123
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@6.1.0
+
+   * Component: Keil::Device:Startup@1.0.1
+      Source file:   Device/Source/ARM/startup_TM4C123.s
+      Source file:   Device/Source/system_TM4C123.c
+      Include file:  Device/Include/TM4C123/TM4C123.h
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
